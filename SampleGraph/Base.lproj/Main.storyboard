@@ -26,18 +26,27 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yHq-Co-1Ff">
+                                <rect key="frame" x="76" y="612" width="262.5" height="120"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="100"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="yHq-Co-1Ff" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8Tg-AR-7Ks"/>
                             <constraint firstItem="Wzw-78-Jg0" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="GF0-bh-RQF"/>
                             <constraint firstItem="Wzw-78-Jg0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YPe-Y1-Woo"/>
                             <constraint firstItem="Wzw-78-Jg0" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="iKo-vh-wSk"/>
                             <constraint firstItem="Wzw-78-Jg0" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.5" id="pyp-ij-XKE"/>
+                            <constraint firstItem="yHq-Co-1Ff" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="1.5" id="wGf-WB-Mkt"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="graphCollectionView" destination="Wzw-78-Jg0" id="dcE-X4-mFX"/>
+                        <outlet property="sampleLabel" destination="yHq-Co-1Ff" id="87N-ab-81h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

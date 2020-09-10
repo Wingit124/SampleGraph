@@ -13,10 +13,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var graphCollectionView: UICollectionView! {
         didSet {
             graphCollectionView.dataSource = self
+            graphCollectionView.delegate = self
             graphCollectionView.register(UINib(nibName: "LineCell", bundle: nil), forCellWithReuseIdentifier: "cell")
             graphCollectionView.collectionViewLayout = createLayout()
         }
     }
+    @IBOutlet weak var sampleLabel: UILabel!
     
     private let dammy: [Int] = {
         var d: [Int] = []
@@ -65,6 +67,12 @@ extension ViewController: UICollectionViewDataSource {
         let ratio = Float(dammy[indexPath.row]) / Float(max)
         cell.setData(ratio: ratio)
         return cell
+    }
+}
+
+extension ViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        sampleLabel.text = dammy[indexPath.row].description
     }
 }
 
