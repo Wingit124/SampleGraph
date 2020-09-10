@@ -32,12 +32,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FeT-jf-g0V">
+                                <rect key="frame" x="183.5" y="740" width="47.5" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="FeT-jf-g0V" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0Xt-c7-TDl"/>
                             <constraint firstItem="yHq-Co-1Ff" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8Tg-AR-7Ks"/>
                             <constraint firstItem="Wzw-78-Jg0" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="GF0-bh-RQF"/>
                             <constraint firstItem="Wzw-78-Jg0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YPe-Y1-Woo"/>
+                            <constraint firstItem="FeT-jf-g0V" firstAttribute="top" secondItem="yHq-Co-1Ff" secondAttribute="bottom" constant="8" symbolic="YES" id="Z4f-xm-Oh8"/>
                             <constraint firstItem="Wzw-78-Jg0" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="iKo-vh-wSk"/>
                             <constraint firstItem="Wzw-78-Jg0" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.5" id="pyp-ij-XKE"/>
                             <constraint firstItem="yHq-Co-1Ff" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="1.5" id="wGf-WB-Mkt"/>
@@ -46,7 +54,8 @@
                     </view>
                     <connections>
                         <outlet property="graphCollectionView" destination="Wzw-78-Jg0" id="dcE-X4-mFX"/>
-                        <outlet property="sampleLabel" destination="yHq-Co-1Ff" id="87N-ab-81h"/>
+                        <outlet property="selectLabel" destination="yHq-Co-1Ff" id="87N-ab-81h"/>
+                        <outlet property="totalLabel" destination="FeT-jf-g0V" id="weG-VW-gih"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

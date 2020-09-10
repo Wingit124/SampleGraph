@@ -18,7 +18,8 @@ class ViewController: UIViewController {
             graphCollectionView.collectionViewLayout = createLayout()
         }
     }
-    @IBOutlet weak var sampleLabel: UILabel!
+    @IBOutlet weak var selectLabel: UILabel!
+    @IBOutlet weak var totalLabel: UILabel!
     
     private let dammy: [Int] = {
         var d: [Int] = []
@@ -35,21 +36,25 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         max = dammy.max() ?? -1
     }
-    
+
     func createLayout() -> UICollectionViewLayout {
         //最小単位のアイテムのサイズ
-        let leadingItem = NSCollectionLayoutItem(
+        let item = NSCollectionLayoutItem(
             layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
                                                heightDimension: .fractionalHeight(1.0)))
-        leadingItem.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 5, bottom: 0, trailing: 5)
+        item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 5, bottom: 0, trailing: 5)
         //グループ内でのアイテムのレイアウト
         let group = NSCollectionLayoutGroup.horizontal(
             layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
                                                heightDimension: .fractionalHeight(1.0)),
-            subitem: leadingItem, count: 15)
+            subitem: item, count: 15)
         //セクションにグループのレイアウトを適応
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .groupPaging
+        //UIScrollViewDelegateが呼ばれないから苦肉の策
+        section.visibleItemsInvalidationHandler = {visibleItems, point, environment in
+            self.updateTotal()
+        }
         //レイアウトを返す
         let layout = UICollectionViewCompositionalLayout(section: section)
         return layout
@@ -64,7 +69,7 @@ extension ViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! LineCell
-        let ratio = Float(dammy[indexPath.row]) / Float(max)
+        let ratio = CGFloat(dammy[indexPath.row]) / CGFloat(max)
         cell.setData(ratio: ratio)
         return cell
     }
@@ -72,7 +77,14 @@ extension ViewController: UICollectionViewDataSource {
 
 extension ViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        sampleLabel.text = dammy[indexPath.row].description
+        selectLabel.text = dammy[indexPath.row].description
+    }
+    private func updateTotal() {
+        let indexes = graphCollectionView.indexPathsForVisibleItems
+        var total = 0
+        for index in indexes {
+            total += dammy[index.row]
+        }
+        totalLabel.text = total.description
     }
 }
-

@@ -17,7 +17,7 @@ class LineCell: UICollectionViewCell {
         // Initialization code
     }
     
-    func setData(ratio: Float) {
+    func setData(ratio: CGFloat) {
         strokeView.transform = .identity
         strokeView.transform = strokeView.transform.scaledBy(x: 1, y: CGFloat(ratio))
     }
