@@ -15,6 +15,8 @@
 		A5DEC31B2509E19D00028803 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5DEC3192509E19D00028803 /* LaunchScreen.storyboard */; };
 		A5DEC3262509E19D00028803 /* SampleGraphTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DEC3252509E19D00028803 /* SampleGraphTests.swift */; };
 		A5DEC3312509E19D00028803 /* SampleGraphUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DEC3302509E19D00028803 /* SampleGraphUITests.swift */; };
+		A5DEC3412509E6B900028803 /* LineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DEC33F2509E6B900028803 /* LineCell.swift */; };
+		A5DEC3422509E6B900028803 /* LineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5DEC3402509E6B900028803 /* LineCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		A5DEC32C2509E19D00028803 /* SampleGraphUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SampleGraphUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5DEC3302509E19D00028803 /* SampleGraphUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleGraphUITests.swift; sourceTree = "<group>"; };
 		A5DEC3322509E19D00028803 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A5DEC33F2509E6B900028803 /* LineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineCell.swift; sourceTree = "<group>"; };
+		A5DEC3402509E6B900028803 /* LineCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LineCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,7 +105,8 @@
 			children = (
 				A5DEC30E2509E19B00028803 /* AppDelegate.swift */,
 				A5DEC3102509E19B00028803 /* SceneDelegate.swift */,
-				A5DEC3122509E19B00028803 /* ViewController.swift */,
+				A5DEC33E2509E1E500028803 /* ViewController */,
+				A5DEC3432509E6C400028803 /* View */,
 				A5DEC3142509E19B00028803 /* Main.storyboard */,
 				A5DEC3172509E19D00028803 /* Assets.xcassets */,
 				A5DEC3192509E19D00028803 /* LaunchScreen.storyboard */,
@@ -126,6 +131,23 @@
 				A5DEC3322509E19D00028803 /* Info.plist */,
 			);
 			path = SampleGraphUITests;
+			sourceTree = "<group>";
+		};
+		A5DEC33E2509E1E500028803 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A5DEC3122509E19B00028803 /* ViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		A5DEC3432509E6C400028803 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A5DEC33F2509E6B900028803 /* LineCell.swift */,
+				A5DEC3402509E6B900028803 /* LineCell.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,6 +255,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5DEC31B2509E19D00028803 /* LaunchScreen.storyboard in Resources */,
+				A5DEC3422509E6B900028803 /* LineCell.xib in Resources */,
 				A5DEC3182509E19D00028803 /* Assets.xcassets in Resources */,
 				A5DEC3162509E19B00028803 /* Main.storyboard in Resources */,
 			);
@@ -260,6 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5DEC3132509E19B00028803 /* ViewController.swift in Sources */,
+				A5DEC3412509E6B900028803 /* LineCell.swift in Sources */,
 				A5DEC30F2509E19B00028803 /* AppDelegate.swift in Sources */,
 				A5DEC3112509E19B00028803 /* SceneDelegate.swift in Sources */,
 			);
